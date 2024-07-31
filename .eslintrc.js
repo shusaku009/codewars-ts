@@ -2,7 +2,8 @@ module.exports = {
   root: true,
   env: {
     browser: true,
-    es2021: true,
+    es2022: true,
+
   },
   parserOptions: {
     ecmaVersion: "latest",
@@ -11,4 +12,5 @@ module.exports = {
   rules: {
     "no-console": "error",
   },
+  parser: '@typescript-eslint/parser',
 };
