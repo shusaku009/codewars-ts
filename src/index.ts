@@ -3,8 +3,25 @@ function solution(number: number): number {
   let sum = 0;
   for (let i = 1; i < number; i++) {
     if (i % 3 === 0 || i % 5 === 0) {
-      sum +=;
+      sum += i;
     }
   }
   return sum;
 }
+
+// CodeWars Break camelCase
+function breakCamelCase(string: string): string {
+  let result = '';
+  for (let i = 0; i < string.length; i++) {
+    // 大文字があるか判定
+    if (string[i] >= 'A' && string[i] <= 'Z') {
+      // 大文字がある場合の処理
+      result += ' ' + string[i];
+    } else {
+      // 大文字が無い場合の処理
+      result += string[i];
+    }
+  }
+  return result;
+}
+breakCamelCase("testCase")
