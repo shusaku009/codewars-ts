@@ -25,3 +25,12 @@ function breakCamelCase(string: string): string {
   return result;
 }
 breakCamelCase("testCase")
+
+// CodeWars Bit Counting
+function bitCounting(n: number): number {
+  if (n) {
+    return n.toString(2).match(/1/g)?.length ?? 0;
+  }
+  return 0;
+}
+bitCounting(2)
