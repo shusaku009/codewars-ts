@@ -34,3 +34,15 @@ function bitCounting(n: number): number {
   return 0;
 }
 bitCounting(2)
+
+// Replace With Alphabet Position
+function alphabetPosition(text: string): string {
+  const alphabet = 'abcdefghijklmnopqrstuvwxyz';
+
+  return text
+    .toLowerCase()
+    .split('')
+    .filter(char => alphabet.includes(char))
+    .map(char => alphabet.indexOf(char) + 1)
+    .join(' ')
+}
