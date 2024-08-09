@@ -46,3 +46,10 @@ function alphabetPosition(text: string): string {
     .map(char => alphabet.indexOf(char) + 1)
     .join(' ')
 }
+
+// Friend or Foe?
+function friend(friends: string[]): string[] {
+  return friends.filter((f) => f.length === 4)
+}
+
+console.log(friend(["test", "te", "user"]))
