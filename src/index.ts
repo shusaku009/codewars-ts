@@ -53,3 +53,23 @@ function friend(friends: string[]): string[] {
 }
 
 console.log(friend(["test", "te", "user"]))
+
+// RGB To Hex Conversion
+function rgb(r: number, g: number, b: number): string {
+  const toHex = (n: number): string => {
+    if (n <= 0) {
+      return "00";
+    }
+
+    if (n > 255) {
+      return "FF";
+    }
+    return n.toString(16).padStart(2, "0").toUpperCase()
+  }
+  return toHex(r) + toHex(g) + toHex(b)
+}
+
+console.log(rgb(-25, 255, 255))
+
+const i = -25
+console.log(i.toString(16))
