@@ -11,12 +11,12 @@ function solution(number: number): number {
 
 // CodeWars Break camelCase
 function breakCamelCase(string: string): string {
-  let result = '';
+  let result = "";
   for (let i = 0; i < string.length; i++) {
     // 大文字があるか判定
-    if (string[i] >= 'A' && string[i] <= 'Z') {
+    if (string[i] >= "A" && string[i] <= "Z") {
       // 大文字がある場合の処理
-      result += ' ' + string[i];
+      result += " " + string[i];
     } else {
       // 大文字が無い場合の処理
       result += string[i];
@@ -24,7 +24,7 @@ function breakCamelCase(string: string): string {
   }
   return result;
 }
-breakCamelCase("testCase")
+breakCamelCase("testCase");
 
 // CodeWars Bit Counting
 function bitCounting(n: number): number {
@@ -33,26 +33,26 @@ function bitCounting(n: number): number {
   }
   return 0;
 }
-bitCounting(2)
+bitCounting(2);
 
 // Replace With Alphabet Position
 function alphabetPosition(text: string): string {
-  const alphabet = 'abcdefghijklmnopqrstuvwxyz';
+  const alphabet = "abcdefghijklmnopqrstuvwxyz";
 
   return text
     .toLowerCase()
-    .split('')
-    .filter(char => alphabet.includes(char))
-    .map(char => alphabet.indexOf(char) + 1)
-    .join(' ')
+    .split("")
+    .filter((char) => alphabet.includes(char))
+    .map((char) => alphabet.indexOf(char) + 1)
+    .join(" ");
 }
 
 // Friend or Foe?
 function friend(friends: string[]): string[] {
-  return friends.filter((f) => f.length === 4)
+  return friends.filter((f) => f.length === 4);
 }
 
-console.log(friend(["test", "te", "user"]))
+console.log(friend(["test", "te", "user"]));
 
 // RGB To Hex Conversion
 function rgb(r: number, g: number, b: number): string {
@@ -64,12 +64,46 @@ function rgb(r: number, g: number, b: number): string {
     if (n > 255) {
       return "FF";
     }
-    return n.toString(16).padStart(2, "0").toUpperCase()
-  }
-  return toHex(r) + toHex(g) + toHex(b)
+    return n.toString(16).padStart(2, "0").toUpperCase();
+  };
+  return toHex(r) + toHex(g) + toHex(b);
 }
 
-console.log(rgb(-25, 255, 255))
+console.log(rgb(-25, 255, 255));
 
-const i = -25
-console.log(i.toString(16))
+const i = -25;
+console.log(i.toString(16));
+
+function arrayDiff(a: number, b: number): number[] {
+  const sum = [a * 2, b * 2];
+  return sum;
+}
+
+console.log(arrayDiff(2, 5));
+
+// Make the Deadfish swim
+export function parse(data: string): number[] {
+  const array: number[] = [];
+  let v = 0;
+
+  for (let i = 0, l = data.length; i < l; i++) {
+    switch (data.charAt(i)) {
+      case "i":
+        v++;
+        break;
+      case "d":
+        v--;
+        console.log(v);
+        break;
+      case "s":
+        v *= v;
+        break;
+      case "o":
+        array.push(v);
+        break;
+    }
+  }
+  return array;
+}
+
+console.log(parse("iiisdoso"));
