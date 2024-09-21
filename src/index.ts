@@ -107,3 +107,19 @@ export function parse(data: string): number[] {
 }
 
 console.log(parse("iiisdoso"));
+
+export function uniqueInOrder<T extends string | number>(
+  iterable: string | T[],
+): T[] {
+  const array: T[] = [];
+  for (let i = 0; i < iterable.length; i++) {
+    const currentElement = iterable[i];
+    const prevElement = iterable[i - 1];
+    if (currentElement !== prevElement) {
+      array.push(currentElement as T);
+    }
+  }
+  return array;
+}
+
+console.log(uniqueInOrder("aabbbggfi"));
