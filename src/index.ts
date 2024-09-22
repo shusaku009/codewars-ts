@@ -108,6 +108,7 @@ export function parse(data: string): number[] {
 
 console.log(parse("iiisdoso"));
 
+// Unique In Order
 export function uniqueInOrder<T extends string | number>(
   iterable: string | T[],
 ): T[] {
@@ -123,3 +124,23 @@ export function uniqueInOrder<T extends string | number>(
 }
 
 console.log(uniqueInOrder("aabbbggfi"));
+
+// Playing with digits
+export const digPow = (n: number, p: number): number => {
+  const nArr = n.toString().split("");
+  let sum = 0;
+
+  for (let i = 0; i < nArr.length; i++) {
+    const element = Number.parseInt(nArr[i]);
+    sum += element ** p;
+    p++;
+  }
+  const compare = sum / n;
+  if (Number.isInteger(compare)) {
+    return compare;
+  } else {
+    return -1;
+  }
+};
+
+console.log(digPow(46288, 3));
