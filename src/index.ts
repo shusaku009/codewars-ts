@@ -153,6 +153,12 @@ export function countSheeps(arrayOfSheep: (boolean | undefined | null)[]) {
   return trueCount.length;
 }
 
+export function refactorCountSheeps(
+  arrayOfSheep: (boolean | undefined | null)[],
+) {
+  return arrayOfSheep.filter(Boolean).length;
+}
+
 console.log(
   countSheeps([
     true,
