@@ -144,3 +144,40 @@ export const digPow = (n: number, p: number): number => {
 };
 
 console.log(digPow(46288, 3));
+
+// Counting sheep...
+export function countSheeps(arrayOfSheep: (boolean | undefined | null)[]) {
+  const trueCount = arrayOfSheep.filter((boolean) => {
+    return boolean === true;
+  });
+  return trueCount.length;
+}
+
+console.log(
+  countSheeps([
+    true,
+    true,
+    true,
+    false,
+    true,
+    true,
+    true,
+    true,
+    true,
+    false,
+    true,
+    false,
+    true,
+    false,
+    false,
+    true,
+    true,
+    true,
+    true,
+    true,
+    false,
+    false,
+    true,
+    true,
+  ]),
+);
