@@ -187,3 +187,10 @@ console.log(
     true,
   ]),
 );
+
+// Reversed Words
+export function reverseWords(str: string): string {
+  return str.split(" ").reverse().join(" ");
+}
+
+console.log(reverseWords("test word"));
