@@ -194,3 +194,10 @@ export function reverseWords(str: string): string {
 }
 
 console.log(reverseWords("test word"));
+
+// Is it even?
+export const testEven = (n: number): boolean => {
+  return n % 2 === 0;
+};
+
+console.log(testEven(2));
