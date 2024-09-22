@@ -201,3 +201,22 @@ export const testEven = (n: number): boolean => {
 };
 
 console.log(testEven(2));
+
+// Find the number of trailing zeros in the binary representation of a number.
+export function trailingZeros(n: number): number {
+  const binaryNum = n.toString(2);
+  const lastNum = binaryNum.split("").reverse();
+  let count = 0;
+  for (let i = 0; i < lastNum.length; i++) {
+    if (lastNum[i] === "0") {
+      count += 1;
+    } else {
+      break;
+    }
+  }
+  return count;
+}
+
+console.log(trailingZeros(4));
+console.log(trailingZeros(5));
+console.log(trailingZeros(8));
