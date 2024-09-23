@@ -220,3 +220,16 @@ export function trailingZeros(n: number): number {
 console.log(trailingZeros(4));
 console.log(trailingZeros(5));
 console.log(trailingZeros(8));
+
+// The wheat/rice and chessboard problem
+export function squaresNeeded(grains: number) {
+  let s = 0;
+
+  while (2 ** s - 1 < grains) {
+    s++;
+  }
+
+  return s;
+}
+
+console.log(squaresNeeded(5));
