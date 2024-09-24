@@ -237,7 +237,7 @@ console.log(squaresNeeded(5));
 // Rock Paper Scissors
 export function rps(p1: string, p2: string): string {
   if (p1 === p2) {
-    return "Draw";
+    return "Draw!";
   }
   if (p1 === "rock" && p2 === "scissors") {
     return "Player 1 won!";
@@ -251,3 +251,15 @@ export function rps(p1: string, p2: string): string {
 }
 
 console.log(rps("rock", "paper"));
+
+// Vowel Count
+export class Kata {
+  static getCount(str: string): number {
+    return str
+      .toLowerCase()
+      .split("")
+      .filter((c) => "aeiou".includes(c)).length;
+  }
+}
+
+console.log(Kata.getCount("testeven"));
