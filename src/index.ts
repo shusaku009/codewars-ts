@@ -263,3 +263,10 @@ export class Kata {
 }
 
 console.log(Kata.getCount("testeven"));
+
+// Vowel Count ver2
+export class Kata2 {
+  static getCount(str: string) {
+    return [...str].filter((char) => "aeiou".includes(char)).length;
+  }
+}
