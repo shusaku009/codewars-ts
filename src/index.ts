@@ -270,3 +270,11 @@ export class Kata2 {
     return [...str].filter((char) => "aeiou".includes(char)).length;
   }
 }
+
+// V A P O R C O D E
+export function vaporcode(str: string): string[] {
+  const upperText = str.toUpperCase().split("");
+  return upperText;
+}
+
+console.log(vaporcode("text"));
