@@ -278,3 +278,13 @@ export function vaporcode(str: string): string[] {
 }
 
 console.log(vaporcode("text"));
+
+// Beginner - Reduce but Grow
+export function grow(arr: number[]): number {
+  const byWithInitial = arr.reduce(
+    (accumulator, currentValue) => accumulator * currentValue,
+  );
+  return byWithInitial;
+}
+
+console.log(grow([1, 2, 3, 4, 5]));
