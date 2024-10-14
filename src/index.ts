@@ -288,3 +288,15 @@ export function grow(arr: number[]): number {
 }
 
 console.log(grow([1, 2, 3, 4, 5]));
+
+// Square Every Digit
+const squareDigits = (num: number): number => {
+  const digits = num.toString().split("");
+  const squaredDigits = digits.map((n) => Number.parseInt(n) ** 2);
+  console.log(squaredDigits);
+  const squaredNumber = squaredDigits.join("");
+
+  return +squaredNumber;
+};
+
+console.log(squareDigits(12345));
