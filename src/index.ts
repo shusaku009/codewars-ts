@@ -300,3 +300,19 @@ const squareDigits = (num: number): number => {
 };
 
 console.log(squareDigits(12345));
+
+// Count the divisors of a number
+export function divisors(n: number) {
+  const result = [];
+  for (let i = 1; i <= Math.sqrt(n); i++) {
+    if (n % i === 0) {
+      result.push(i);
+      if (i !== n / i) {
+        result.push(n / i);
+      }
+    }
+  }
+  return result.sort((a, b) => a - b).length;
+}
+
+console.log(divisors(3));
