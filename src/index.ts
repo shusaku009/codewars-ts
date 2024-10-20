@@ -316,3 +316,15 @@ export function divisors(n: number) {
 }
 
 console.log(divisors(3));
+
+// Longest vowel chain
+export function solve(s: string): number {
+  const count = [...s.matchAll(/[aeiou]+/g)].reduce(
+    (acc, [match]) => Math.max(acc, match.length),
+    0,
+  );
+
+  return count;
+}
+
+console.log(solve("chrononhotonthuooaos"));
