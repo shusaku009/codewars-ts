@@ -328,3 +328,19 @@ export function solve(s: string): number {
 }
 
 console.log(solve("chrononhotonthuooaos"));
+
+// Calculate BMI
+export function bmi(weight: number, height: number): string {
+  // TODO: implement this method
+  const calculation = weight / height ** 2;
+  if (calculation <= 18.5) {
+    return "Underweight";
+  } else if (calculation <= 25.0) {
+    return "Normal";
+  } else if (calculation <= 30.0) {
+    return "Overweight";
+  } else {
+    return "Obese";
+  }
+  // throw new Error("The method or operation is not implemented.");
+}
