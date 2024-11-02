@@ -344,3 +344,10 @@ export function bmi(weight: number, height: number): string {
   }
   // throw new Error("The method or operation is not implemented.");
 }
+
+function shark(pontoonDistance, sharkDistance, youSpeed, sharkSpeed, dolphin) {
+  const actualSharkSpeed = dolphin ? sharkSpeed / 2 : sharkSpeed;
+  return pontoonDistance / youSpeed < sharkDistance / actualSharkSpeed
+    ? "Alive!"
+    : "Shark Bait!";
+}
