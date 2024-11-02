@@ -358,3 +358,14 @@ function shark(
     ? "Alive!"
     : "Shark Bait!";
 }
+
+console.log(shark(40, 50, 30, 10, 50));
+
+// Will there be enough space?
+export function enough(cap: number, on: number, wait: number): number {
+  const availableSpace = cap - on;
+  return Math.max(0, wait - availableSpace);
+}
+
+console.log(enough(50, 15, 10));
+console.log(enough(100, 60, 50));
