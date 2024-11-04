@@ -374,3 +374,15 @@ console.log(enough(100, 60, 50));
 export function doubleInteger(i: number): number {
   return i * 2;
 }
+
+// Grasshopper - Summation
+export const summation = (num: number) => {
+  let sum = 0;
+  for (let i = 1; i <= num; i++) {
+    sum += i;
+  }
+  return sum;
+};
+
+console.log(summation(1));
+console.log(summation(8));
