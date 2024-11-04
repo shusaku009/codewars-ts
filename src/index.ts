@@ -369,3 +369,8 @@ export function enough(cap: number, on: number, wait: number): number {
 
 console.log(enough(50, 15, 10));
 console.log(enough(100, 60, 50));
+
+// You Can't Code Under Pressure #1
+export function doubleInteger(i: number): number {
+  return i * 2;
+}
