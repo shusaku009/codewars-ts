@@ -386,3 +386,24 @@ export const summation = (num: number) => {
 
 console.log(summation(1));
 console.log(summation(8));
+
+// Sum without highest and lowest number
+export function sumArray(array: number[] | null): number {
+  if (!array || array.length <= 2) {
+    return 0; // 配列がnullまたは要素が2以下の場合は0を返す
+  }
+  const maximum: number = array.reduce((max, current) =>
+    Math.max(max, current),
+  );
+  const minimum: number = array.reduce((min, current) =>
+    Math.min(min, current),
+  );
+
+  const sum = array
+    .filter((num) => num !== maximum && num !== minimum)
+    .reduce((acc, curr) => acc + curr, 0);
+
+  return sum;
+}
+
+console.log(sumArray([1, 2, 3, 4, 5]));
