@@ -110,7 +110,7 @@ console.log(parse("iiisdoso"));
 
 // Unique In Order
 export function uniqueInOrder<T extends string | number>(
-  iterable: string | T[],
+  iterable: string | T[]
 ): T[] {
   const array: T[] = [];
   for (let i = 0; i < iterable.length; i++) {
@@ -154,7 +154,7 @@ export function countSheeps(arrayOfSheep: (boolean | undefined | null)[]) {
 }
 
 export function refactorCountSheeps(
-  arrayOfSheep: (boolean | undefined | null)[],
+  arrayOfSheep: (boolean | undefined | null)[]
 ) {
   return arrayOfSheep.filter(Boolean).length;
 }
@@ -185,7 +185,7 @@ console.log(
     false,
     true,
     true,
-  ]),
+  ])
 );
 
 // Reversed Words
@@ -282,7 +282,7 @@ console.log(vaporcode("text"));
 // Beginner - Reduce but Grow
 export function grow(arr: number[]): number {
   const byWithInitial = arr.reduce(
-    (accumulator, currentValue) => accumulator * currentValue,
+    (accumulator, currentValue) => accumulator * currentValue
   );
   return byWithInitial;
 }
@@ -321,7 +321,7 @@ console.log(divisors(3));
 export function solve(s: string): number {
   const count = [...s.matchAll(/[aeiou]+/g)].reduce(
     (acc, [match]) => Math.max(acc, match.length),
-    0,
+    0
   );
 
   return count;
@@ -351,7 +351,7 @@ function shark(
   sharkDistance: number,
   youSpeed: number,
   sharkSpeed: number,
-  dolphin: number,
+  dolphin: number
 ): string {
   const actualSharkSpeed: number = dolphin ? sharkSpeed / 2 : sharkSpeed;
   return pontoonDistance / youSpeed < sharkDistance / actualSharkSpeed
@@ -393,10 +393,10 @@ export function sumArray(array: number[] | null): number {
     return 0; // 配列がnullまたは要素が2以下の場合は0を返す
   }
   const maximum: number = array.reduce((max, current) =>
-    Math.max(max, current),
+    Math.max(max, current)
   );
   const minimum: number = array.reduce((min, current) =>
-    Math.min(min, current),
+    Math.min(min, current)
   );
 
   const sum = array
@@ -407,3 +407,29 @@ export function sumArray(array: number[] | null): number {
 }
 
 console.log(sumArray([1, 2, 3, 4, 5]));
+
+//Interlocking Binary Pairs
+export const checkBinaryPair = (a: number, b: number) => {
+  // 2つの引数を２進数に変換する
+  // 配列に変換
+  // 変換した数値を右から取り出す
+  const parseIntArray = a.toString(2).split("").reverse();
+  const parseIntArray2 = b.toString(2).split("").reverse();
+
+  const minLength = Math.min(parseIntArray.length, parseIntArray2.length);
+
+  for (let i = 0; i < minLength; i++) {
+    if (parseIntArray[i] === "1" && parseIntArray2[i] === "1") {
+      return false;
+    }
+  }
+  return true;
+  // return console.log(parseIntArray, parseIntArray2);
+
+  //
+  // 配列の長さを比較して、同じであれば
+  // indexの大きい順で取得、その際に'1'と同じ値があるかを判断する
+  // 同じ場合はそこで処理を終了、異なる場合は処理を続ける
+};
+
+console.log(checkBinaryPair(3, 5));
