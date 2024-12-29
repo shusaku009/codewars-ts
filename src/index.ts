@@ -110,7 +110,7 @@ console.log(parse("iiisdoso"));
 
 // Unique In Order
 export function uniqueInOrder<T extends string | number>(
-  iterable: string | T[],
+  iterable: string | T[]
 ): T[] {
   const array: T[] = [];
   for (let i = 0; i < iterable.length; i++) {
@@ -154,7 +154,7 @@ export function countSheeps(arrayOfSheep: (boolean | undefined | null)[]) {
 }
 
 export function refactorCountSheeps(
-  arrayOfSheep: (boolean | undefined | null)[],
+  arrayOfSheep: (boolean | undefined | null)[]
 ) {
   return arrayOfSheep.filter(Boolean).length;
 }
@@ -185,7 +185,7 @@ console.log(
     false,
     true,
     true,
-  ]),
+  ])
 );
 
 // Reversed Words
@@ -282,7 +282,7 @@ console.log(vaporcode("text"));
 // Beginner - Reduce but Grow
 export function grow(arr: number[]): number {
   const byWithInitial = arr.reduce(
-    (accumulator, currentValue) => accumulator * currentValue,
+    (accumulator, currentValue) => accumulator * currentValue
   );
   return byWithInitial;
 }
@@ -321,7 +321,7 @@ console.log(divisors(3));
 export function solve(s: string): number {
   const count = [...s.matchAll(/[aeiou]+/g)].reduce(
     (acc, [match]) => Math.max(acc, match.length),
-    0,
+    0
   );
 
   return count;
@@ -351,7 +351,7 @@ function shark(
   sharkDistance: number,
   youSpeed: number,
   sharkSpeed: number,
-  dolphin: number,
+  dolphin: number
 ): string {
   const actualSharkSpeed: number = dolphin ? sharkSpeed / 2 : sharkSpeed;
   return pontoonDistance / youSpeed < sharkDistance / actualSharkSpeed
@@ -393,10 +393,10 @@ export function sumArray(array: number[] | null): number {
     return 0; // 配列がnullまたは要素が2以下の場合は0を返す
   }
   const maximum: number = array.reduce((max, current) =>
-    Math.max(max, current),
+    Math.max(max, current)
   );
   const minimum: number = array.reduce((min, current) =>
-    Math.min(min, current),
+    Math.min(min, current)
   );
 
   const sum = array
@@ -440,3 +440,43 @@ export function twoOldestAges(ages: number[]): number[] {
   return arraySmaller.slice(-2);
 }
 console.log(twoOldestAges([1, 2, 3, 5, 2, 6]));
+
+// Circle cipher
+export function encode(s: string) {
+  const length = s.length;
+  const mid = Math.floor(length / 2);
+  const firstHalf = s.slice(0, mid);
+  const lastHalf = s.slice(mid);
+
+  let newString = "";
+  for (let i = 0; i < Math.ceil(length / 2); i++) {
+    if (i < firstHalf.length) {
+      newString += firstHalf[i];
+    }
+    if (i < lastHalf.length) {
+      newString += lastHalf[lastHalf.length - 1 - i];
+    }
+  }
+  return newString;
+}
+
+export function decode(s: string) {
+  const length = s.length;
+  let firstHalf = "";
+  let lastHalf = "";
+
+  for (let i = 0; i < length; i++) {
+    if (i % 2 === 0) {
+      firstHalf += s[i];
+    } else {
+      lastHalf += s[i];
+    }
+  }
+
+  const reversedLastHalf = lastHalf.split("").reverse().join("");
+  return firstHalf + reversedLastHalf;
+}
+
+console.log(encode("codewars"));
+console.log(decode("csordaew"));
+console.log(encode("wehti"));
