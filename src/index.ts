@@ -480,3 +480,13 @@ export function decode(s: string) {
 console.log(encode("codewars"));
 console.log(decode("csordaew"));
 console.log(encode("wehti"));
+
+// Average Scores
+export function average(scores: number[]): number {
+  const sum = scores.reduce((a, b) => {
+    return a + b;
+  });
+  return Math.round(sum / scores.length);
+}
+
+console.log(average([1, 5, 6, 3, 2]));
