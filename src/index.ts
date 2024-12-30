@@ -490,3 +490,10 @@ export function average(scores: number[]): number {
 }
 
 console.log(average([1, 5, 6, 3, 2]));
+
+// Average Scores Arrow Function
+const average2 = (scores: number[]): number => {
+  return Math.round(scores.reduce((a, b) => a + b) / scores.length);
+};
+
+console.log(average2([3, 5, 2, 5]));
