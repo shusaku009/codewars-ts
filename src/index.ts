@@ -110,7 +110,7 @@ console.log(parse("iiisdoso"));
 
 // Unique In Order
 export function uniqueInOrder<T extends string | number>(
-  iterable: string | T[],
+  iterable: string | T[]
 ): T[] {
   const array: T[] = [];
   for (let i = 0; i < iterable.length; i++) {
@@ -154,7 +154,7 @@ export function countSheeps(arrayOfSheep: (boolean | undefined | null)[]) {
 }
 
 export function refactorCountSheeps(
-  arrayOfSheep: (boolean | undefined | null)[],
+  arrayOfSheep: (boolean | undefined | null)[]
 ) {
   return arrayOfSheep.filter(Boolean).length;
 }
@@ -185,7 +185,7 @@ console.log(
     false,
     true,
     true,
-  ]),
+  ])
 );
 
 // Reversed Words
@@ -282,7 +282,7 @@ console.log(vaporcode("text"));
 // Beginner - Reduce but Grow
 export function grow(arr: number[]): number {
   const byWithInitial = arr.reduce(
-    (accumulator, currentValue) => accumulator * currentValue,
+    (accumulator, currentValue) => accumulator * currentValue
   );
   return byWithInitial;
 }
@@ -321,7 +321,7 @@ console.log(divisors(3));
 export function solve(s: string): number {
   const count = [...s.matchAll(/[aeiou]+/g)].reduce(
     (acc, [match]) => Math.max(acc, match.length),
-    0,
+    0
   );
 
   return count;
@@ -351,7 +351,7 @@ function shark(
   sharkDistance: number,
   youSpeed: number,
   sharkSpeed: number,
-  dolphin: number,
+  dolphin: number
 ): string {
   const actualSharkSpeed: number = dolphin ? sharkSpeed / 2 : sharkSpeed;
   return pontoonDistance / youSpeed < sharkDistance / actualSharkSpeed
@@ -393,10 +393,10 @@ export function sumArray(array: number[] | null): number {
     return 0; // 配列がnullまたは要素が2以下の場合は0を返す
   }
   const maximum: number = array.reduce((max, current) =>
-    Math.max(max, current),
+    Math.max(max, current)
   );
   const minimum: number = array.reduce((min, current) =>
-    Math.min(min, current),
+    Math.min(min, current)
   );
 
   const sum = array
@@ -497,3 +497,21 @@ const average2 = (scores: number[]): number => {
 };
 
 console.log(average2([3, 5, 2, 5]));
+
+// Spot the Differences
+export const spot = (a: string, b: string): number[] => {
+  // 配列に変換する
+  const array = a.split("");
+  const array2 = b.split("");
+  // 配列の文字列を一つずつ比較する
+  // 比較した文字列が同じであればスルー、異なる場合は対象のindexを取得する
+  const result = [];
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] !== array2[i]) {
+      result.push(i);
+    }
+  }
+  return result;
+};
+
+console.log(spot("abcde", "abcdf"));
