@@ -515,3 +515,14 @@ export const spot = (a: string, b: string): number[] => {
 };
 
 console.log(spot("abcde", "abcdf"));
+
+// Spot the Differences
+export function spot(s1: string, s2: string): number[] {
+  const diff = [];
+  for (let i = 0; i < s1.length; i++) {
+    if (s1[i] !== s2[i]) {
+      diff.push(i);
+    }
+  }
+  return diff;
+}
